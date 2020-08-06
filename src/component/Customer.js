@@ -1,10 +1,11 @@
 import React from "react";
+import "./Customer.css";
 
 class Customer extends React.Component {
   render() {
     const { id, image, name, birthday, gender, job } = this.props;
     return (
-      <div>
+      <div className="CustomerContainer">
         <CustomerProfile id={id} name={name} image={image} />
         <CustomerInfo birthday={birthday} gender={gender} job={job} />
       </div>
@@ -16,11 +17,13 @@ class CustomerProfile extends React.Component {
   render() {
     const { id, image, name } = this.props;
     return (
-      <div>
-        <img src={image} alt="profile" />
-        <h2>
+      <div className="profileContainer">
+        <div className="imgContainer">
+          <img src={image} alt="profile" />
+        </div>
+        <p>
           {name}({id})
-        </h2>
+        </p>
       </div>
     );
   }
@@ -29,7 +32,7 @@ class CustomerInfo extends React.Component {
   render() {
     const { birthday, gender, job } = this.props;
     return (
-      <div>
+      <div className="infoContainer">
         <p>{birthday}</p>
         <p>{gender}</p>
         <p>{job}</p>

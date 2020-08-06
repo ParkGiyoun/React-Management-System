@@ -8,7 +8,7 @@ const customer = [
     image: "https://placeimg.com/64/64/any",
     name: "Hong",
     birthday: "020115",
-    gender: "male",
+    gender: "female",
     job: "student",
   },
   {
@@ -32,7 +32,8 @@ const customer = [
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="mainContainer">
+        <h1 className="title">Management System</h1>
         {customer.map((c) => {
           const { id, image, name, birthday, gender, job } = c;
           return (
